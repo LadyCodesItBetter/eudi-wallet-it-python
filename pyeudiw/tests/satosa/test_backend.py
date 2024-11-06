@@ -234,7 +234,8 @@ class TestOpenID4VPBackend:
         session_id = context.state["SESSION_ID"]
         self.backend.db_engine.init_session(
             state=state,
-            session_id=session_id
+            session_id=session_id,
+            remote_flow_typ="same_device"
         )
         doc_id = self.backend.db_engine.get_by_state(state)["document_id"]
 
@@ -305,7 +306,8 @@ class TestOpenID4VPBackend:
         session_id = context.state["SESSION_ID"]
         self.backend.db_engine.init_session(
             state=state,
-            session_id=session_id
+            session_id=session_id,
+            remote_flow_typ="same_device"
         )
         doc_id = self.backend.db_engine.get_by_state(state)["document_id"]
 
